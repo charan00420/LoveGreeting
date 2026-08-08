@@ -87,11 +87,23 @@ function openLetter(){
 
             clearInterval(interval);
 
-            document.getElementById("gallery").style.display="block";
-            document.getElementById("timerCard").style.display="block";
-            document.getElementById("reasonCard").style.display="block";
-            document.getElementById("final").style.display="block";
+            document.getElementById("story").style.display="block";
 
+const cards=document.querySelectorAll(".storyCard");
+
+cards.forEach((card,i)=>{
+    setTimeout(()=>{
+        card.classList.add("show");
+    },i*1000);
+});
+
+setTimeout(()=>{
+    document.getElementById("gallery").style.display="block";
+},3500);
+
+document.getElementById("timerCard").style.display="block";
+document.getElementById("reasonCard").style.display="block";
+document.getElementById("final").style.display="block";
         }
 
     },35);
